@@ -211,7 +211,44 @@ select标签和ul、ol、dl一样，都是组标签，用于创建表单中的�
 
 ### 3.3. input标签
 
+#### 3.3.1. 明文输入框
+用户可以在输入框内输入内容，并且可以给输入框设置默认的值
 
+```html
+<input type="text" value="请输入用户名">
+```
 
+![](http://p4yixtz2j.bkt.clouddn.com/1521194126.png )
+
+#### 3.3.2 暗文输入框
+用户可以在输入框内输入暗文内容
+
+```html
+<input type="password" value="请输入用户密码">
+```
+
+![](http://p4yixtz2j.bkt.clouddn.com/1521197319.png )
+
+#### 3.3.3 单选框(radio)
+用户只能从众多选项中选择其中一个
+
+```html
+<input type="radio" name="xingbie"/> 男
+```
+
+单选按钮，天生就是不互斥的，如果想互斥，就必须要有相同的`name`属性
+
+给单选设置默认值
+
+```html
+<input type="radio" name="xingbie"/ checked="checked"> 男
+<input type="radio" name="xingbie"/> 女
+<input type="radio" name="xingbie"/> 中性
+```
+
+![](http://p4yixtz2j.bkt.clouddn.com/1521197611.png )
+
+#### 3.3.4 多选框(checkbox)
+用户只能从众多选项中选择多个
 
 
