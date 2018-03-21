@@ -385,4 +385,99 @@ W3C又推出了一组新的标签，这些标签在现实上看似乎buis没什�
 ### 7.1. vedio标签
 用来播放视频
 
+格式1：
 
+```html
+<video src="">
+</video>
+```
+
+格式2：
+
+```html
+<video>
+	<source src="" type=""></source> 
+	<source src="" type=""></source> 
+</video>
+```
+video标签的第二种格式存在的意义，就是为了解决浏览器适配的问题。
+
+| 属性 | 作用 |
+| --- | :---: |
+| src | 告诉video标签需要播放的视频地址 |
+| autoplay | 告诉video标签需要自动播放视频 |
+| controls | 告诉video标签是否需要显示控制条 |
+| poster | 告诉video标签视频没有播放之前显示的占位图片 |
+| loop | 告诉video标签视频播放完毕之后是否需要循环播放 |
+| preload | 预加载视频，preload和autoplay相冲突、互斥 |
+| muted | 静音 |
+| width/height | 和img标签中的一模一样 |
+
+通过video标签的第二种格式虽然能够指定所有的浏览器都支持的视频格式，但是想让所有浏览器都通过video标签播放视频还有一个前提条件，就是浏览器必须都支持HTML5标签，负责同样无法播放。
+
+过去的一些浏览器是不支持HTML5标签的，所以为了让过去的一些浏览器也能够通过video标签来播放视频，可以通过一个JS框架叫做`html5media`来实现。
+
+### 7.2. audio标签
+播放音频
+
+格式1：
+
+```html
+<audio src="">
+</video>
+```
+
+格式2：
+
+```html
+<audio src="">
+	<source src="" type="">
+</video>
+```
+
+audio标签的使用和video标签的使用基本一样，video中能够使用的属性在audio标签中大部分都能够使用，并且功能都一样只不过有3个属性不能用，`height/width/poster`
+
+### 7.3. 详情和概要标签
+利用summary标签来描述概要信息，利用details标签来描述详细信息。
+默认情况下是折叠展示，想看见详情必须点击。
+
+**格式：**
+
+```html
+<details>
+	<summary>概要信息</summary>
+	详细信息
+</details>
+```
+
+![](http://p4yixtz2j.bkt.clouddn.com/1521629589.png )
+
+
+### 7.4. marquee标签
+跑马灯
+
+```html
+<marquee>内容</marquee>
+```
+
+| 属性 | 作用 |
+| --- | :---: |
+| direction | 设置滚动方向`left/right/up/down` |
+| scrollamount | 设置滚动速度，值越大越快 |
+| loop | 设置滚动次数，默认是-1，无限滚动 |
+| behavior | 设置滚动类型 slide滚动到便捷就停止 alternate滚动到边界就弹回 |
+
+marquee标签不是W3C推荐的标签，在W3C官方文档中也无法查询到这个标签，但是各大浏览器对这个标签的支持非常好。
+ 
+## 八、被遗弃的标签
+由于HTML现在只负责语义而不负责样式，但是HTML一开始有一部分标签连样式也包揽了，所以这部分标签都被废弃了。
+
+
+| 标签 | 作用 | 格式 | 样式 |
+| --- | :---: | --- | --- |
+| b标签`Bold` | 将文本字体加粗 | `<b>加粗的文本</b>` |  <b>加粗的文本</b> |
+| u标签`Underlined` | 将文本添加下划线 | `<u>下划线文本</u>` | <u>下划线文本</u> |
+| i标签`Italic` | 将文本字体加粗 | `<i>斜体文本</i>` | <i>斜体文本</i> |
+| s标签`Strikethrough` | 将文本添加删除线 | `<s>删除线文本</s>` | <s>删除线文本</s> |
+
+**原则：不到万不得已，不会使用这些标签**
