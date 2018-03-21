@@ -209,9 +209,9 @@ select标签和ul、ol、dl一样，都是组标签，用于创建表单中的�
 
 ![](http://p4yixtz2j.bkt.clouddn.com/1520932487.png )
 
-### 3.3. input标签
+## 四、input标签
 
-#### 3.3.1. 明文输入框
+### 4.1. 明文输入框
 用户可以在输入框内输入内容，并且可以给输入框设置默认的值
 
 ```html
@@ -220,7 +220,7 @@ select标签和ul、ol、dl一样，都是组标签，用于创建表单中的�
 
 ![](http://p4yixtz2j.bkt.clouddn.com/1521194126.png )
 
-#### 3.3.2 暗文输入框
+### 4.2 暗文输入框
 用户可以在输入框内输入暗文内容
 
 ```html
@@ -229,7 +229,7 @@ select标签和ul、ol、dl一样，都是组标签，用于创建表单中的�
 
 ![](http://p4yixtz2j.bkt.clouddn.com/1521197319.png )
 
-#### 3.3.3 单选框(radio)
+### 4.3 单选框(radio)
 用户只能从众多选项中选择其中一个
 
 ```html
@@ -248,7 +248,141 @@ select标签和ul、ol、dl一样，都是组标签，用于创建表单中的�
 
 ![](http://p4yixtz2j.bkt.clouddn.com/1521197611.png )
 
-#### 3.3.4 多选框(checkbox)
+### 4.4 多选框(checkbox)
 用户只能从众多选项中选择多个
+
+```html
+<input type="checkbox" name="hobby" checked="checked"/> basketball
+<input type="checkbox" name="hobby" checked="checked"/> football
+<input type="checkbox" name="hobby"/> baseball
+```
+
+复选框最好也是有相同的那么(虽然不需要互斥，但是需要有相同的name)
+
+![](http://p4yixtz2j.bkt.clouddn.com/1521617345.png )
+
+### 4.5 lable标签
+label标签不会向用户呈现任何特殊效果。不过，它为鼠标用户改进了可用性。
+
+* 表单元素要有一个`id`，然后`label`标签就有了一个`for`属性，`for`属性和`id`相同就表示绑定了
+* 所有表单元素都可以通过`label`绑定
+
+```html
+<label for="account"> 账号：</label>
+<input type="text" id="account"/> 
+```
+
+![](http://p4yixtz2j.bkt.clouddn.com/1521618175.png )
+
+### 4.6 按钮
+定义可点击按钮，多数情况下，用于通过JavaScript启动脚本。
+
+```html
+<input type="button" value="我是按钮"/> 
+```
+
+![](http://p4yixtz2j.bkt.clouddn.com/1521618325.png )
+
+### 4.7 图片按钮
+定义图像形式的提交按钮
+```html
+<input type="image" src="http://p4yixtz2j.bkt.clouddn.com/1521618420.png"> 
+```
+
+![](http://p4yixtz2j.bkt.clouddn.com/1521618489.png )
+
+### 4.8 重置按钮
+
+这个按钮不需要写value自动就有`“重置”`文字，reset只对form表单中的表单项有效果。
+
+```html
+<input type="reset" /> 
+```
+
+![](http://p4yixtz2j.bkt.clouddn.com/1521618629.png )
+
+### 4.9 提交按钮
+定义提交按钮，提交按钮会把表单数据发送到action属性指定的页面
+
+* 这个按钮不需要写`value`自动就有`“提交”`文字
+* 要想通过`submit`提交数据到服务器，被提交的表单项都必须设置那么属性
+* 默认明文传输`GET`不安全，可以将`method`属性设置为`POST`改为非明文
+
+```html
+<input type="submit" /> 
+```
+
+![](http://p4yixtz2j.bkt.clouddn.com/1521618996.png )
+
+
+## 4.10 datalist 标签
+给输入框绑定待选项
+
+```html
+<p/>输入您的车型   
+<input type="text" list="cars">
+<datalist id="cars">
+	<option>奔驰</option>
+	<option>宝马</option>
+	<option>奥迪</option>
+	<option>路虎</option>
+	<option>宾利</option>
+</datalist>
+```
+
+![](http://p4yixtz2j.bkt.clouddn.com/1521619042.png )
+
+## 五、字符实体
+在HTML中有的字符是被HTML保留的，有特殊含义的字符，是不能再浏览器中直接展示出来的，那么这些东西要想展示出来就必须通过字符实体。
+
+1. `&lt;` 小于符号 `<`
+2. `&gt` 大于符号 `>`
+3. `&copy`版权符号 `©`
+
+在HTML中对空格/回车/tab/不敏感，会把uduoge空格/回车/tab当做一个空格来处理，想输入多个空格就必须要输入 `&nbsp`
+
+# 六、 新推出的标签
+W3C又推出了一组新的标签，这些标签在现实上看似乎buis没什么区别，但是在语义上却又有重大的区别。
+
+## 6.1 `strong` 标签
+定义重要性强调的文字
+
+```html
+<strong>重要性内容</strong> 
+```
+
+![](http://p4yixtz2j.bkt.clouddn.com/1521620153.png )
+
+## 6.2 `ins` 标签
+`inserted`定义插入的文字
+
+```html
+<ins>新插入的内容</ins> 
+```
+
+![](http://p4yixtz2j.bkt.clouddn.com/1521620167.png )
+
+## 6.3 `em` 标签
+`Emphasized` 定义强调的文字
+
+```html
+<em>强调内容</em> 
+```
+
+![](http://p4yixtz2j.bkt.clouddn.com/1521620181.png )
+
+## 6.4 `del` 标签
+`Deleted`定义被删除的文字
+
+```html
+<del>已经删除的文本</del> 
+```
+
+![](http://p4yixtz2j.bkt.clouddn.com/1521620200.png )
+
+
+## 七、 多媒体标签
+### 7.1. vedio标签
+用来播放视频
 
 
