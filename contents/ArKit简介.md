@@ -3,7 +3,7 @@ title: ARKit简介
 date: 2017-07-15 15:31:40
 ---
 
-![](ArKit简介/ARKitLogo.png) 
+![](https://saidicaprio.oss-cn-shanghai.aliyuncs.com/imgs/ARKitLogo.png) 
 
 ARKit是WWDC发布iOS11系统所新增框架。ARKit是一个移动AR平台，提供高层次的API，可在iOS 11 + A9芯片及以上（iPhone 6s起）上使用。
 
@@ -26,7 +26,7 @@ ARKit需要的开发环境：
 ## 一、ARKit简介
 ### ARKit如何工作？
 
-![](ArKit简介/ARKit框架结构.png) 
+![](https://saidicaprio.oss-cn-shanghai.aliyuncs.com/imgs/ARKit框架结构.png) 
 
 #### Step1. Tracking 追踪
 * World tracking 世界跟踪
@@ -52,13 +52,13 @@ ARKit需要的开发环境：
 * 由`ARCamera`负责捕捉摄像头画面
 * 由ARSession负责搭建3D场景
 
-![](ArKit简介/ARKit框架流程图.png) 
+![](https://saidicaprio.oss-cn-shanghai.aliyuncs.com/imgs/ARKit框架流程图.png) 
 
 > 综上所述，ARKit捕捉3D现实世界使用的是自身的功能，这个功能是在iOS11新增的。而ARKit在3D现实场景中添加虚拟物体使用的是父类SCNView的功能，这个功能早在iOS8时就已经添加（SceneKit是iOS8新增）
 
 ## 二、Tracking 追踪
 
-![](ArKit简介/ARKitCapturing.png) 
+![](https://saidicaprio.oss-cn-shanghai.aliyuncs.com/imgs/ARKitCapturing.png) 
 
 
 ### 2.1 影响追踪质量的因素
@@ -81,16 +81,16 @@ ARKit需要的开发环境：
 
 它们三者之间的关系看起来如下图：
 
-![](ArKit简介/ARKitSession关系图.png)
+![](https://saidicaprio.oss-cn-shanghai.aliyuncs.com/imgs/ARKitSession关系图.png)
 
 ARCamera在3D世界的位置看起来是这样的:
 
-![](ArKit简介/ARKitCamera.png)
+![](https://saidicaprio.oss-cn-shanghai.aliyuncs.com/imgs/ARKitCamera.png)
 
 
 ### 2.2 追踪状态？
 #### 共有四种状态，在受限时，最好通知用户
-![](ArKit简介/跟踪状态.png)
+![](https://saidicaprio.oss-cn-shanghai.aliyuncs.com/imgs/跟踪状态.png)
 ```swift
 func session(_ session: ARSession, cameraDidChangeTrackingState camera: ARCamera) { 
 	if case .limited(let reason) = camera.trackingState {
@@ -115,7 +115,7 @@ func sessionInterruptionEnded(_ session: ARSession) {
 
 ### 3.1 平面检测
 
-![](ArKit简介/ARKitSceneUnderstanding.png) 
+![](https://saidicaprio.oss-cn-shanghai.aliyuncs.com/imgs/ARKitSceneUnderstanding.png) 
 
 * 相对于重力的水平面
 * 跨多个帧运行
@@ -132,7 +132,7 @@ func sessionInterruptionEnded(_ session: ARSession) {
   * 预估平面
   * 特征点
   
-![](ArKit简介/ARKitHit-Testing.png) 
+![](https://saidicaprio.oss-cn-shanghai.aliyuncs.com/imgs/ARKitHit-Testing.png) 
 
 根据类型的不同，碰撞测试的运作方法会不一样
 
@@ -154,7 +154,7 @@ func sessionInterruptionEnded(_ session: ARSession) {
 ### ARKit工作流程
 ARKit与SceneKit的配合：通过ARSCNView，绘制捕捉的图像，更新SCNCamera，更新光照，将SCNNode映射到ARAnchor上
 
-![](ArKit简介/ARKit工作流程.png) 
+![](https://saidicaprio.oss-cn-shanghai.aliyuncs.com/imgs/ARKit工作流程.png) 
 
 * 1.ARSCNView加载场景SCNScene
 * 2.SCNScene启动相机ARCamera开始捕捉场景

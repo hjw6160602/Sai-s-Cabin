@@ -1,5 +1,5 @@
 ---
-title: 初识HTML
+title: JavaScript简介
 date: 2018-03-23 16:27:43
 tags:
 ---
